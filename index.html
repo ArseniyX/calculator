@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style/style.css">
+  <script src="./scripts/script.js"></script>
 
 
   <title>Frontend Mentor | Calculator app</title>
@@ -22,7 +23,8 @@
     }
 
     .attribution a {
-      color: hsl(228, 45%, 44%);
+      color: hsl(228, 16%, 82%);
+      text-decoration: none;
     }
   </style>
 </head>
@@ -31,27 +33,52 @@
   <header>
     <div class="logo">calc</div>
     <div class="theme">
-      <span>theme</span>
+      <span class="themeTitle">theme</span>
       <div class="toggle">
-        <label for="theme1">1</label>
-        <input id="theme1" type="radio" name="theme" />
-        <label for="theme2">2</label>
-        <input id="theme2" type="radio" name="theme" />
-        <label for="theme3">3</label>
-        <input id="theme3" type="radio" name="theme" />
+        <!-- Rounded switch -->
+        <div class="labels">
+          <label class="themeLabel" for="theme1">1</label>
+          <label class="themeLabel" for="theme2">2</label>
+          <label class="themeLabel" for="theme3">3</label>
+        </div>
+
+        <div class="rectangle">
+          <button id="theme1" class="switchButtons"></button>
+          <button id="theme2" class="disappearButtons"></button>
+          <button id="theme3" class="disappearButtons"></button>
+        </div>
       </div>
 
     </div>
   </header>
   <main>
-    <div class="screen"></div>
-    <div class="calc">
-      <button>Test</button>
+    <div class="screen">
+      <p class="screenText">598,234</p>
+    </div>
+    <div class="keyBoard">
+      <!-- <button class="keys">
+        <p class="keyNumber">7</p>
+      </button>
+      <button class="keys">
+        <p class="keyNumber">8</p>
+      </button>
+      <button class="keys">
+        <p class="keyNumber">9</p>
+      </button>
+      <button class="keys grayButton">
+        <p class="keyNumber">DEL</p>
+      </button>
+      <button class="keys grayButton equalsButton">
+        <p class="keyNumber">DEL</p>
+      </button>
+      <button class="keys grayButton resetButton">
+        <p class="keyNumber">DEL</p>
+      </button> -->
     </div>
   </main>
   <footer>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    <div style="color:grey" class="attribution">
+      Challenge by <a class="link" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="https://arseniyx.com/" target="_blank">ArseniyX</a>.
   </footer>
 
