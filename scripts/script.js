@@ -50,11 +50,10 @@ onload = () => {
   const equalsBtnListener = () => {
     if (calcArr[0] !== undefined || num !== "") {
       calcArr.push(num);
-      // console.log(num, calcArr);
       reset();
       const result = writeResult(calcArr);
       printResult(result);
-      // console.log("Equals start:", calcArr, num, writeResult(calcArr));
+     
       calcArr = [];
       num = result;
     }
@@ -107,9 +106,6 @@ onload = () => {
 
       printResult(num);
     }
-
-    console.log(screenText.innerHTML);
-
     resetSymbol();
   };
 
@@ -205,7 +201,6 @@ onload = () => {
           r.style.setProperty(key, value[e.id - 1]);
         }
         tappedTheme = e.id;
-        console.log(themes["--main-background"][e.id - 1]);
       }
     });
   });
