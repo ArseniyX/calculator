@@ -145,6 +145,7 @@ main {
     height: 64px;
     width: 101px;
     border-style: none;
+    font-size: 32px;
 }
 
 .keys:hover {
@@ -176,7 +177,7 @@ main {
     background: #647198;
 }
 
-.grayButton>p {
+.grayButton {
     color: #fff
 }
 
@@ -198,4 +199,9 @@ main {
 .equalsButton:active {
     background: #F96B5B;
     box-shadow: inset 0px -4px 0px #93261A;
+}
+
+.tappedSymbol {
+    color: #D03F2F;
+    background-color: #fff;
 }
