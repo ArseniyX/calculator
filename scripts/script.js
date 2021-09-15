@@ -40,7 +40,8 @@ onload = () => {
   // Delete button Listener (DEL)
   const delBtnListener = () => {
     num = num.slice(0, -1);
-    num === "" ? (num = "0") : printResult(num);
+    if (num === "") num = "0";
+    printResult(num);
 
     resetSymbol();
   };
@@ -61,7 +62,6 @@ onload = () => {
 
   // Dot listener (.)
   const dotBtnListener = () => {
-    // if (screenText.innerHTML[0] === "0") num += "0";
     if (!screenText.innerHTML.includes(".")) {
       num += ".";
       screenText.append(".");
@@ -173,5 +173,40 @@ onload = () => {
       key.addEventListener("click", () => numberBtnListener(e));
     }
     keyBoard.appendChild(key);
+  });
+
+  let tappedTheme = "1";
+  const r = document.querySelector(":root");
+
+  const themes = {
+    "--main-background": ["#3A4663", "#E6E6E6", "#17062A"],
+    "--toggle-background": ["#242D44", "#D2CDCD", "#1E0936"],
+    "--screen-background": ["#181F33", "#EEEEEE", "#1E0936"],
+    "--keys-background": ["#EAE3DC", "#E5E4E1", "#331C4D"],
+    "--keys-active": ["#FFFFFF", "#FFFFFF", "#6C34AC"],
+    "--keys-shadow": ["#B3A497", "#A79E91", "#881C9E"],
+    "--special-keys": ["#647198", " #378187", "#56077C"],
+    "--special-active": ["#A2B2E1", "#62B5BC", "#8631AF"],
+    "--special-shadow": ["#414E73", "#1B6066", "#BE15F4"],
+    "--keys-color": ["#434A59", "#36362C", "#FFE53D"],
+    "--button-color": ["#D03F2F", "#C85402", "#00DED0"],
+    "--active-button": ["#F96B5B", "#FF8A38", "#93FFF8"],
+    "--button-shadow": ["#93261A", "#873901", "#6CF9F1"],
+    "--text-color": ["#ffffff", "#36362C", "#FFE53D"],
+  };
+
+  document.querySelectorAll(".btn").forEach((e) => {
+    e.addEventListener("click", () => {
+      if (tappedTheme !== e.id) {
+        document.getElementById(tappedTheme).classList.add("disappearButtons");
+        e.classList.remove("disappearButtons");
+        
+        for (const [key, value] of Object.entries(themes)) {
+          r.style.setProperty(key, value[e.id - 1]);
+        }
+        tappedTheme = e.id;
+        console.log(themes["--main-background"][e.id - 1]);
+      }
+    });
   });
 };

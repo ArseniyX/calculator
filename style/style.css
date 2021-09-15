@@ -1,8 +1,22 @@
+:root {
+    --main-background: #3A4663;
+    --toggle-background: #242D44;
+    --screen-background: #181F33;
+    --keys-background: #EAE3DC;
+    --keys-active: #FFFFFF;
+    --keys-shadow: #B3A497;
+    --special-keys: #647198;
+    --special-active: #A2B2E1;
+    --special-shadow: #414E73;
+    --keys-color: #434A59;
+    --button-color: #D03F2F;
+    --active-button: #F96B5B;
+    --button-shadow: #93261A;
+    --text-color: #ffffff;
+    --special-keys-color: #ffffff;
+}
+
 * {
-    --main-background: hsl(222, 26%, 31%);
-    --toggle-background: hsl(223, 31%, 20%);
-    --screen-background: hsl(224, 36%, 15%);
-    --keys-background: hsl(30, 25%, 89%);
     font-family: 'Spartan', sans-serif;
     box-sizing: border-box;
 }
@@ -13,7 +27,7 @@ body {
 }
 
 header {
-    margin-top: 96px;
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     width: 540px;
@@ -29,7 +43,7 @@ main {
     /* identical to box height */
     text-align: center;
     letter-spacing: -0.533333px;
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .theme {
@@ -48,7 +62,7 @@ main {
     line-height: 13px;
     text-align: center;
     letter-spacing: 1px;
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .toggle {
@@ -67,7 +81,7 @@ main {
     font-size: 12px;
     line-height: 13px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .themeLabel {
@@ -78,24 +92,24 @@ main {
     display: flex;
     justify-content: space-evenly;
     margin-top: 5px;
-    background: #242D44;
+    background: var(--toggle-background);
     border-radius: 13px;
     width: 71px;
     height: 26px;
 }
 
-.switchButtons {
+.btn {
     margin-top: 5px;
     width: 16px;
     height: 16px;
-    background: #D03F2F;
+    background: var(--button-color);
     border: 0px solid transparent;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.switchButtons:active {
-    background: #F96B5B;
+.btn:active {
+    background: var(--active-button);
 }
 
 .disappearButtons {
@@ -108,7 +122,7 @@ main {
 .screen {
     position: relative;
     margin-top: 32px;
-    background: #181F33;
+    background: var(--screen-background);
     border-radius: 10px;
     height: 100px;
     padding-top: 5px;
@@ -124,7 +138,7 @@ main {
     /* identical to box height */
     text-align: right;
     letter-spacing: -0.8px;
-    color: #FFFFFF;
+    color: var(--text-color);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
@@ -140,12 +154,13 @@ main {
     position: relative;
     margin: 32px 0px 0px 25px;
     background-color: var(--keys-background);
-    box-shadow: inset 0px -4px 0px #B3A497;
+    box-shadow: inset 0px -4px 0px var(--keys-shadow);
     border-radius: 10px;
     height: 64px;
     width: 101px;
     border-style: none;
     font-size: 32px;
+    color: var(--keys-color);
 }
 
 .keys:hover {
@@ -153,37 +168,22 @@ main {
 }
 
 .keys:active {
-    background-color: #ffffff;
-    box-shadow: inset 0px -4px 0px #B3A497;
-}
-
-.keyNumber {
-    font-size: 32px;
-    line-height: 36px;
-    display: flex;
-    letter-spacing: -0.533333px;
-    color: #434A59;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: #434A59;
+    background-color: var(--keys-active);
+    box-shadow: inset 0px -4px 0px var(--keys-shadow);
 }
 
 .grayButton {
-    box-shadow: inset 0px -4px 0px #414E73;
-    background: #647198;
+    box-shadow: inset 0px -4px 0px var(--special-shadow);
+    background: var(--special-keys);
 }
 
 .grayButton {
-    color: #fff
+    color: var(--special-keys-color)
 }
 
 .grayButton:active {
-    background: #A2B2E1;
-    box-shadow: inset 0px -4px 0px #414E73;
+    background: var(--special-active);
+    box-shadow: inset 0px -4px 0px var(--special-shadow);
 }
 
 .resetButton {
@@ -192,16 +192,16 @@ main {
 
 .equalsButton {
     width: 231px;
-    background: #D03F2F;
-    box-shadow: inset 0px -4px 0px #93261A;
+    background: var(--button-color);
+    box-shadow: inset 0px -4px 0px var(--button-shadow);
 }
 
 .equalsButton:active {
-    background: #F96B5B;
-    box-shadow: inset 0px -4px 0px #93261A;
+    background: var(--active-button);
+    box-shadow: inset 0px -4px 0px var(--button-shadow);
 }
 
 .tappedSymbol {
-    color: #D03F2F;
-    background-color: #fff;
+    color: var(--button-color);
+    background-color: var(--keys-active);
 }
