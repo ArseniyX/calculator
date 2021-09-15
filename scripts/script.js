@@ -8,7 +8,7 @@ onload = () => {
 
     arr[0] = arr[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     let result = arr.join(".");
-    screenText.innerHTML = num.length < 12 ? result : expo(arr.join("."));
+    screenText.innerHTML = num.length < 9 ? result : expo(arr.join("."));
   };
 
   const writeResult = (arr) => {
@@ -102,7 +102,7 @@ onload = () => {
 
     if (num === "0") num = "";
     console.log(num, e);
-    if (num.length < 9) {
+    if (num.length < 8) {
       num += e;
 
       printResult(num);
