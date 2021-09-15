@@ -1,8 +1,14 @@
 onload = () => {
+  function expo(x) {
+    return Number.parseFloat(x).toExponential(2);
+  }
+
   const printResult = (num) => {
     const arr = num.split(".");
+
     arr[0] = arr[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    screenText.innerHTML = arr.join(".");
+    let result = arr.join(".");
+    screenText.innerHTML = num.length < 12 ? result : expo(arr.join("."));
   };
 
   const writeResult = (arr) => {
@@ -34,7 +40,7 @@ onload = () => {
   // Delete button Listener (DEL)
   const delBtnListener = () => {
     num = num.slice(0, -1);
-    num === "" ? num = "0" : printResult(num);
+    num === "" ? (num = "0") : printResult(num);
 
     resetSymbol();
   };
@@ -94,11 +100,11 @@ onload = () => {
       reset();
     }
 
-    if (num === "0") num = ""
-    console.log(num, e)
-    if (num.length < 12) {
+    if (num === "0") num = "";
+    console.log(num, e);
+    if (num.length < 9) {
       num += e;
-      
+
       printResult(num);
     }
 
