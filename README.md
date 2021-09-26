@@ -65,7 +65,6 @@ This function for example: take 3 buttons change their classes so the one will v
           r.style.setProperty(key, value[e.id - 1]);
         }
         tappedTheme = e.id;
-        console.log(themes["--main-background"][e.id - 1]);
       }
     });
   });
